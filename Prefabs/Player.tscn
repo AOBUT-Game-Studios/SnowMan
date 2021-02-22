@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scipts/Movement.gd" type="Script" id=1]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53.6189, 52.0559 )
+
+[node name="Player" type="Node2D"]
+position = Vector2( 418.601, 212.868 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
+speed = 1000
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
