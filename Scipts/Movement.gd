@@ -23,3 +23,4 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	vector = move_and_slide(vector)
+	

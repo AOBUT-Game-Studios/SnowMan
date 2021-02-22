@@ -3,12 +3,11 @@
 [ext_resource path="res://Scipts/Movement.gd" type="Script" id=1]
 [ext_resource path="res://Scipts/Player.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.6189, 52.0559 )
 
 [node name="Player" type="Node2D"]
-position = Vector2( 418.601, 212.868 )
+position = Vector2( 510.525, 300.549 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -16,7 +15,7 @@ __meta__ = {
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
-speed = 1000
+speed = 800
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
 
@@ -24,3 +23,10 @@ speed = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 2, 2 )
+process_mode = 0
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
