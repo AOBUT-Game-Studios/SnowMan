@@ -26,7 +26,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1.5, 1.5 )
 process_mode = 0
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
