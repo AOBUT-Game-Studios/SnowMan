@@ -27,6 +27,6 @@ func _process(delta):
 func SelfDestruct(): # Take a guess as to what this does
 	pass
 
-func _on_Area2D_area_entered(area: Area2D):
+func _on_Area2D_area_entered(area: Area2D): # makes the node kill itself if it hits something
 	queue_free()
 	pass # Replace with function body.
