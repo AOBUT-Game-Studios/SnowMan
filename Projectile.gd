@@ -13,7 +13,7 @@ func _ready():
 	Trajectory.x = (BulletLocaton.x - $Placeholder.position.x)
 	Trajectory.y = (BulletLocaton.y - $Placeholder.position.y)
 	
-	
+	SelfDestruct()
 #	while Trajectory.y + Trajectory.x > 100:
 #		Trajectory.x = Trajectory.x * 0.9
 #		Trajectory.y = Trajectory.y * 0.9
@@ -23,3 +23,10 @@ func _ready():
 func _process(delta):
 	$Sprite.move_local_x(Trajectory.x /10)
 	$Sprite.move_local_y(Trajectory.y /10)
+
+func SelfDestruct(): # Take a guess as to what this does
+	pass
+
+func _on_Area2D_area_entered(area: Area2D):
+	queue_free()
+	pass # Replace with function body.
