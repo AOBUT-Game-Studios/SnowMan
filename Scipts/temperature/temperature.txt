@@ -1,0 +1,13 @@
+This component is made of 3 parts:
+- Local Temperature
+  The player's temperature.
+
+- Global Temperature
+  The base outside temperature without any influence from a zone (e.g. campfire) in C°
+
+- Temperature Offset
+  When player enters a Collision2D zone (e.g. Campfire), the temperature offset will be added to the global temperature
+
+
+- Fixed Temperature
+  The base temperature inside a structure (e.g. cabin) where it is not influenced by the Global Temperature

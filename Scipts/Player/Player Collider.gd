@@ -1,6 +1,9 @@
-extends Node2D
+extends CollisionShape2D
 
-export(float) var globalTemperature
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.

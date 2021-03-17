@@ -1,7 +1,8 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
+
+# Temperature offset in C° when player enters a specific zone (e.g. campfire). Will be added to Global Temeprature
 export(float) var tempOffset
 
 
