@@ -1,21 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scipts/Movement.gd" type="Script" id=1]
 [ext_resource path="res://Scipts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/SnowMan.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 202.865
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.6189, 52.0559 )
 
 [node name="Player" type="Node2D"]
-position = Vector2( 510.525, 300.549 )
+position = Vector2( 515.287, 284.278 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
+[node name="SnowMan" parent="." instance=ExtResource( 3 )]
+position = Vector2( 53.4979, 128.506 )
+
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
 speed = 800
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
 
