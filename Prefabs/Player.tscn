@@ -205,26 +205,26 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "Walk Right"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Walk Down"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Walk Up"
 
-[sub_resource type="AnimationNodeAnimation" id=24]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "Walk Left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=18]
-blend_point_0/node = SubResource( 15 )
+blend_point_0/node = SubResource( 14 )
 blend_point_0/pos = Vector2( 1, 0 )
-blend_point_1/node = SubResource( 16 )
+blend_point_1/node = SubResource( 15 )
 blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 17 )
+blend_point_2/node = SubResource( 16 )
 blend_point_2/pos = Vector2( 0, -1.1 )
-blend_point_3/node = SubResource( 24 )
+blend_point_3/node = SubResource( 17 )
 blend_point_3/pos = Vector2( -1, 0 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
@@ -279,7 +279,7 @@ parameters/Walk/blend_position = Vector2( 0, 0 )
 texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
-frame = 29
+frame = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 23 )
