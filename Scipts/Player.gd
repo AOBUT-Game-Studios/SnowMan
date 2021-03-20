@@ -3,12 +3,12 @@ extends Node2D
 #Basic information
 export (int) var maxHealth
 onready var health = maxHealth
-
+# loads instance scene and colldown for bullets to be shot
 const FiredBullet = preload("res://Scenes/Projectile.tscn")
 var FireReady = 60
 
 #Player abilities and interactions will be interfaced here
-
+#Instances Projectile and rotates the item at middle towards the mouse as a base
 func _process(delta):
 	FireReady = FireReady + 1
 	$compass.look_at(get_global_mouse_position())
