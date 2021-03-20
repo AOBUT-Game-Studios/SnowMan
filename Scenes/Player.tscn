@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scipts/Movement.gd" type="Script" id=1]
 [ext_resource path="res://Scipts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/icecle.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.6189, 52.0559 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 66.454, 79.534 )
 
 [node name="Player" type="Node2D"]
 position = Vector2( 510.525, 300.549 )
@@ -30,3 +34,13 @@ zoom = Vector2( 2, 2 )
 process_mode = 0
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="RotateAnchor" type="Node2D" parent="KinematicBody2D"]
+
+[node name="compass" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="compass"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="compass/Area2D"]
+shape = SubResource( 2 )

@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://images/Michael with THE ar7.png" type="Texture" id=1]
+[ext_resource path="res://images/Michael with THE ar7 (1).png" type="Texture" id=2]
+[ext_resource path="res://playerscript.gd" type="Script" id=3]
+[ext_resource path="res://images/New Piskel-1.png.png" type="Texture" id=4]
+[ext_resource path="res://images/New Piskel-1.png (1).png" type="Texture" id=5]
+[ext_resource path="res://Player.gd" type="Script" id=6]
+[ext_resource path="res://images/p1.png" type="Texture" id=7]
+[ext_resource path="res://Recording_9 (mp3cut.net).wav" type="AudioStream" id=8]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 52.8052
+height = 130.275
+
+[sub_resource type="Animation" id=2]
+resource_name = "Sword Swing"
+
+[sub_resource type="Animation" id=3]
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "wand wave"
+length = 0.5
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 19.8652, 4.77751 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Player"]
+position = Vector2( 97.8074, 152.308 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="player" type="Sprite" parent="Player/KinematicBody2D"]
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 4
+
+[node name="hitbox" type="CollisionShape2D" parent="Player/KinematicBody2D"]
+position = Vector2( 0, 4.48985 )
+shape = SubResource( 1 )
+
+[node name="Weapon" type="Node2D" parent="Player/KinematicBody2D"]
+
+[node name="Sprite" type="Sprite" parent="Player/KinematicBody2D/Weapon"]
+position = Vector2( 153.777, 8.41847 )
+texture = ExtResource( 2 )
+vframes = 3
+frame = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player/KinematicBody2D/Weapon"]
+stream = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/KinematicBody2D/Weapon"]
+"anims/Sword Swing" = SubResource( 2 )
+anims/fire = SubResource( 3 )
+"anims/wand wave" = SubResource( 4 )
+
+[node name="Bullet" type="Node2D" parent="Player/KinematicBody2D"]
+
+[node name="Sprite" type="Sprite" parent="Player/KinematicBody2D/Bullet"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/KinematicBody2D/Bullet"]
+shape = SubResource( 5 )
+
+[node name="Particles2D" type="Particles2D" parent="Player/KinematicBody2D/Bullet"]
+amount = 17
+randomness = 0.39
+local_coords = false
+process_material = SubResource( 6 )
+texture = ExtResource( 7 )
+
+[node name="Target" type="Node2D" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player/Target"]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
