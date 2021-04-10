@@ -245,10 +245,10 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 53.6189, 52.0559 )
+extents = Vector2( 50, 50 )
 
 [node name="Player" type="Node2D"]
-position = Vector2( 509.52, 300.294 )
+position = Vector2( 510.521, 298.292 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
