@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/particle1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/icecle.png" type="Texture" id=3]
 
-
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
